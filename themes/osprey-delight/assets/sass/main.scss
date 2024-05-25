@@ -65,7 +65,7 @@ $term_title: "{{ .Site.Data.terminal.title }}";
 {{ if .Site.Params.background -}}
   {{ $imgDict := partial "resizer/responsive" (dict 
     "img" (resources.Get .Site.Params.background)
-    "maxsize" (default "4092x" site.Params.Image.Background.resize)
+    "maxsize" (default "1024x" site.Params.Image.Background.resize)
     "lqipsize" (default "512x Gaussian" site.Params.Image.Background.resizeLQIP)
     "responsivesizes" (slice "512x" "640x" "1280x" "1600x" "1920x")
     "resizeoptions" (default "jpg q92" site.Params.Image.Background.resizeOptions)

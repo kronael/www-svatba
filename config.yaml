@@ -91,15 +91,11 @@ Params:
   
   # Image resizing can be configured here (see README for more info):
   Image:
-    Logo:
-      resize: 2048x
-      resizeOptions: jpg q96
-
     Gallery:
       resize: "600x"
 
     Background:
-      resize: 2048x
+      resize: 1024x
       resizeLQIP: 128x
       resizeOptions: jpg q96
 
