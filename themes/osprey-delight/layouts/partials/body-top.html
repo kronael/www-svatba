@@ -6,23 +6,34 @@
 {{ end }}
 
 {{ if .IsHome }}
-  <header class="row middle-xs center-xs bg lazyload">
-    <div class="col-xs-12">
-      {{ partial "logo-img.html" . }}
-          {{ with .Site.Params.mdTagline -}}
-              {{ (replace (. | markdownify) "{cursor}" "<span class=\"cursor\">|</span>") | safeHTML }}
-          {{- else -}}
-              {{ if .Site.Params.tagline -}}
-              <h1>{{ .Site.Params.tagline }}<span class="cursor">|</span></h1>
-              {{- end}}
-          {{- end }}
-          <noscript>
-          <h2>{{ partial "icon" "warning" }}</h2>
-          <h2>{{ i18n "noJsMsg" }}</h2>
-          </noscript>
-        </div>
+<div class="col-xs-12">
+  <header class="row top-xs center-xs bg lazyload">
+  <img class="home-logo" src={{ site.Params.logoBig }} />
+      {{ with .Site.Params.mdTagline -}}
+          {{ (replace (. | markdownify) "{cursor}" "<span class=\"cursor\">|</span>") | safeHTML }}
+      {{- else -}}
+          {{ if .Site.Params.tagline -}}
+          <h1>{{ .Site.Params.tagline }}<span class="cursor">|</span></h1>
+          {{- end}}
+      {{- end }}
+      <noscript>
+      <h2>{{ partial "icon" "warning" }}</h2>
+      <h2>{{ i18n "noJsMsg" }}</h2>
+      </noscript>
   </header>
 {{ end }}
+
+<section class="nav-full row middle-xs center-xs">
+  <div class="col-xs-12">
+    <div class="row middle-xs center-xs">
+      {{ range .Site.Menus.main }}
+        <div class="col-xs-12"><h1><a href="{{ .URL }}">{{ .Pre }}{{ .Name }}</a></h1></div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+</div>
 
 <nav class="row middle-xs center-xs {{ if not .IsHome -}} nav-fixed nav-shadow {{- end }}">
   <div class="col-xs-6 col-sm-1 logo" style="{{ if not .IsHome }}visibility: visible;{{- end }}">
@@ -49,13 +60,3 @@
       </a>
   </div>
 </nav>
-
-<section class="nav-full row middle-xs center-xs">
-  <div class="col-xs-12">
-    <div class="row middle-xs center-xs">
-      {{ range .Site.Menus.main }}
-        <div class="col-xs-12"><h1><a href="{{ .URL }}">{{ .Pre }}{{ .Name }}</a></h1></div>
-      {{ end }}
-    </div>
-  </div>
-</section>

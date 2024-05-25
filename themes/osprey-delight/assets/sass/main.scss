@@ -35,8 +35,9 @@ h3 {
 }
 
 .home-logo {
-  max-height: 20 * $vertical-rhythm;
-  margin-bottom: $vertical-rhythm;
+    height: 90%;
+    min-height: 30em;
+    margin-bottom: $vertical-rhythm;
 }
 
 {{ if .Site.Params.Feat.useTermynal -}}
@@ -64,14 +65,14 @@ $term_title: "{{ .Site.Data.terminal.title }}";
 {{ if .Site.Params.background -}}
   {{ $imgDict := partial "resizer/responsive" (dict 
     "img" (resources.Get .Site.Params.background)
-    "maxsize" (default "1920x" site.Params.Image.Background.resize)
+    "maxsize" (default "4092x" site.Params.Image.Background.resize)
     "lqipsize" (default "512x Gaussian" site.Params.Image.Background.resizeLQIP)
     "responsivesizes" (slice "512x" "640x" "1280x" "1600x" "1920x")
     "resizeoptions" (default "jpg q92" site.Params.Image.Background.resizeOptions)
   ) }}
 
   .bg,.about,.default {
-    background-image: url("{{ $imgDict.lqip.Permalink }}"); 
+    background-image: url("{{ .Site.Params.background }}");
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -83,9 +84,9 @@ $term_title: "{{ .Site.Data.terminal.title }}";
 
   {{ range $imgDict.responsive }}
   @media (min-width: {{ math.Round (mul .Width 0.5) }}px) {
-      .bg.lazyloaded,.about.lazyloaded {
+      .bg.lazyloaded,.about.lazyloaded,.default.lazyloaded {
         transition: background-image 1.5s;
-        background-image: url("{{ .Permalink }}"), url("{{ $imgDict.lqip.Permalink }}"); 
+        background-image: url("{{ .Permalink }}");
       }
   }
   {{ end }}
