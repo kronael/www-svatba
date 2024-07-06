@@ -21,4 +21,4 @@ draft = false
 **19:30** | kvíz - v zahradě \
 **20:50** | focení pří západu slunce \
 **21:00** | noční raut \
-**21:30** | focení s prskavkami - u altánku \
+**21:30** | focení s prskavkami - u altánku

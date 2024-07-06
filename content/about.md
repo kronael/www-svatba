@@ -13,3 +13,6 @@ Radíč č.p. 1,\
 49.7147425N, 14.4141214E
 
 Parkování v zatáčce před bránou zámku.
+
+Kdo byste nám snad chtěl dát nějaký dar, vězte, že nejvíc oceníme peníze spolu s
+pocitem, že i Vy jako naši hosté si náš jedinečný den náramně užijete.
