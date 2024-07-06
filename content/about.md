@@ -11,3 +11,5 @@ Radíč č.p. 1,\
 264 01 Radíč
 
 49.7147425N, 14.4141214E
+
+Parkování v zatáčce před bránou zámku.
